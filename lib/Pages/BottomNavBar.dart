@@ -1,7 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:project_acropolis/Pages/TrainerScreens/TrainerScreen.dart';
 import 'package:project_acropolis/UI%20Assets/ScreenSize.dart';
+
+import 'TrainerScreens/TrainerScreen.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -9,19 +10,18 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-
 //Marks where to start (on pressed) (middle icon)
   int pageIndex = 2;
 
 //Makes starting page -should match pageIndex unles it's work-in-progress
-  Widget _showPage = new TrainerScreen();
+  Widget _showPage = new TrainerPage();
 
-  final TrainerScreen _morePage = TrainerScreen();
-  final TrainerScreen _timerPage = TrainerScreen();
-  final TrainerScreen _trainerPage = TrainerScreen();
-  final TrainerScreen _workOutsPage = TrainerScreen();
+  final TrainerPage _morePage = TrainerPage();
+  final TrainerPage _timerPage = TrainerPage();
+  final TrainerPage _trainerPage = TrainerPage();
+  final TrainerPage _workOutsPage = TrainerPage();
 
-  final TrainerScreen _home = TrainerScreen();
+  final TrainerPage _home = TrainerPage();
 // Bottom Nav Bar Chooser DashboardScreen
 
   Widget _pageChooser(int page) {
@@ -57,10 +57,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-
-Color backgroundPallet1 = Color(0xfffffdf6);
-Color backgroundPallet2 = Color(0xffece8d9);
-
+    Color backgroundPallet1 = Color(0xfffffdf6);
+    Color backgroundPallet2 = Color(0xffece8d9);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -84,9 +82,9 @@ Color backgroundPallet2 = Color(0xffece8d9);
                   size: screenWidth(context) * 0.06, color: Color(0xffece8d9)),
             ],
             color: Color(0xff0f0f0f), //navBarPallet,
-            buttonBackgroundColor: Color(0xff0f0f0f),//navBarPallet,
+            buttonBackgroundColor: Color(0xff0f0f0f), //navBarPallet,
             //match with contaner
-            backgroundColor: Color(0xff0f0f0f),//navBarPallet,
+            backgroundColor: Color(0xff0f0f0f), //navBarPallet,
             animationCurve: Curves.easeInOut,
             animationDuration: Duration(milliseconds: 350),
             onTap: (int tappedIndex) {
@@ -96,12 +94,12 @@ Color backgroundPallet2 = Color(0xffece8d9);
             },
           ),
           body: Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [backgroundPallet1, backgroundPallet2])),
-      child: Center(child: _showPage))),
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [backgroundPallet1, backgroundPallet2])),
+              child: Center(child: _showPage))),
     );
   }
 }
