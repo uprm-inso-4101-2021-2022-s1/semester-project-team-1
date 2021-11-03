@@ -1,6 +1,6 @@
 {
-    "name": "project_acropolis",
-    "short_name": "project_acropolis",
+    "name": "acropolis_member_management",
+    "short_name": "acropolis_member_management",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

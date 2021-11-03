@@ -1,4 +1,4 @@
-# project_acropolis
+# acropolis_member_management
 
 A new Flutter project.
 
